@@ -1,0 +1,30 @@
+.hideComments {
+    cursor: pointer;
+    padding-top: 15px;
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 10px; 
+    border-bottom: solid 1px grey;
+}
+
+.commentsDiv {
+    max-height: 600px;
+    overflow: scroll;
+
+  
+}
+
+.showComments {
+    cursor: pointer;
+}
+
+i {
+    color: red;
+}
+
+div::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
