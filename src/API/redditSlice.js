@@ -10,7 +10,7 @@ export const fetchPostsByCategory = createAsyncThunk(
         const data = await fetch(`${rootUrl}${category}.json`);
         const json = await data.json();
         console.log(json);
-       
+       console.log(json);
         const objects = json.data.children.map(item => ({
             title: item.data.title,
             url: item.data.url,

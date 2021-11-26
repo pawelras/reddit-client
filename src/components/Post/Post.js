@@ -38,8 +38,8 @@ export const Post = (props) => {
              {mediaType === 'image' && <div><img src={props.post.url} /></div>}
              {mediaType === 'video' && <ReactPlayer style={{"max-width": "100%", "margin": "auto"}} url={props.post.url}/>}
              {props.post.text && <div className="text">{props.post.text}</div>}
-             {/* {props.post.media && <ReactPlayer url={props.post.media.reddit_video.fallback_url} controls={true}/>} */}
-             {!mediaType && <a href={props.post.url}> Read More</a>}
+             {props.post.media?.reddit_video?.fallback_url && <ReactPlayer style={{"max-width": "100%", "margin": "auto"}} url={props.post.media.reddit_video.fallback_url} controls={true} volume={0.5} />}
+             {!mediaType && <a target="_blank" href={props.post.url}> Read More</a>}
              
             
             {comments.length > 0 && <Comments permalink={props.post.permalink}/>}
@@ -47,5 +47,3 @@ export const Post = (props) => {
         </div>
     )
 }
-
-//

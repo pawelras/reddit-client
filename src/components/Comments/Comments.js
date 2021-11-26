@@ -18,13 +18,19 @@ export const Comments = (props) => {
     const { permalink } = props
     const relevantComments = comments.find(element => (Object.keys(element)[0]) === permalink);
     //console.log(relevantComments[permalink])
-    //const numOfComments = relevantComments[permalink].length    
+    let numOfComments;
+
+    if(relevantComments && relevantComments.hasOwnProperty(permalink)){
+        console.log(relevantComments[permalink]);
+        numOfComments = relevantComments[permalink].length
+    }    
+   
    
     if (relevantComments && isVisible) {
         return (
             <div>
                 <div className="hideComments" onClick={changeVisibility}><i class='far fa-comment'></i>
-                &nbsp; Hide Comments 
+                &nbsp;Hide Comments&nbsp;({numOfComments})
                 </div>
 
                 <div className="commentsDiv">
@@ -40,7 +46,7 @@ export const Comments = (props) => {
         return (
             <p className="showComments" 
                 onClick={changeVisibility}> 
-                <i class='far fa-comment'></i>&nbsp; Comments 
+                <i class='far fa-comment'></i>&nbsp;Comments&nbsp;({numOfComments})
             </p>
            
         )
