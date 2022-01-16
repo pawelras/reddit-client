@@ -1,8 +1,8 @@
 import { React } from 'react';
 import { SearchBar } from '../../features/SearchBar/SearchBar';
-import logo from '../../images/reddit.gif';
 import './Header.css';
-import letterA from '../../images/letterA.png'
+import logo1 from '../../images/logo1.png';
+
 
 
 export const Header = () => {
@@ -10,10 +10,11 @@ export const Header = () => {
 
     return(
         <div className="headerDiv">
-        <img className="logo" src={logo}/> 
-        <span>25Reddits <img src={letterA} />&nbsp;Day
-        </span><SearchBar />
-           </div>
+            <div className='logoContainer'>
+                <a href="/"><img className="logo" src={logo1}/></a>
+            </div>
+            <SearchBar />
+        </div>
     )
 
 }

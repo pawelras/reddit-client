@@ -17,7 +17,7 @@ export const PostWall = () => {
    
     
     return (
-        <div style={{"min-width": "50%", "max-width": "500px"}}>
+        <div style={{"min-width": "50%", "max-width": "500px", "margin-top": "50px"}}>
             <h3>Current category: {category}</h3>
           {posts.map((post, index) => (
               <Post key={index} post={post} />

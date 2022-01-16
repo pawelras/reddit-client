@@ -4,7 +4,7 @@ import { PostWall } from '../components/PostWall/PostWall';
 import { Categories } from '../features/Categories/Categories';
 import { Header } from '../components/Header/Header';
 
-
+//ADD BANNER AT THE END TO COME BACK ANOTHER DAY OR CHOOSE A DIFFERENT CATEGORY AND A FOOTER
 
 export function App() {
 

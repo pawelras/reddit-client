@@ -4,8 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectSearchTerm } from './searchBarSlice';
 import { searchPosts } from '../../API/redditSlice';
 import './SearchBar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 export const SearchBar = () => {
+
+    const searchIcon = <FontAwesomeIcon icon={faSearch} className="searchIcon" />
 
 const dispatch = useDispatch();
 const searchTerm = useSelector(selectSearchTerm);
@@ -32,13 +37,15 @@ const handleEnterPress = (e) => {
 
     return (
         <div className="searchBarDiv">
+
             <input className="searchBar"
                 onChange={handleChange}
                 onKeyUp={handleEnterPress}
                 id="searchTerm" 
                 type="text" />
 
-            <i onClick={handleSubmit}class="fas fa-search fa-2x"></i>
+            <span onClick={handleSubmit}>{searchIcon}</span>
+            
 
         </div>
     )

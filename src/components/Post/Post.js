@@ -25,7 +25,7 @@ export const Post = (props) => {
   
 
      if (isPostsLoading) {
-        return <div className="loadingPostContainer"><img src={loading} /></div>
+        return <div className="loadingPostContainer"><img className="loading" src={loading} /></div>
      }
 
     

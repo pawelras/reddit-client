@@ -2,8 +2,13 @@ import { useState, React } from "react";
 import { Comment } from "./Comment";
 import { useSelector } from "react-redux";
 import './Comments.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment} from '@fortawesome/free-solid-svg-icons';
 
 export const Comments = (props) => {
+
+    const commentIcon = <FontAwesomeIcon icon={faComment} className="commentIcon" />
+
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -17,7 +22,6 @@ export const Comments = (props) => {
     
     const { permalink } = props
     const relevantComments = comments.find(element => (Object.keys(element)[0]) === permalink);
-    //console.log(relevantComments[permalink])
     let numOfComments;
 
     if(relevantComments && relevantComments.hasOwnProperty(permalink)){
@@ -29,7 +33,7 @@ export const Comments = (props) => {
     if (relevantComments && isVisible) {
         return (
             <div>
-                <div className="hideComments" onClick={changeVisibility}><i class='far fa-comment'></i>
+                <div className="hideComments" onClick={changeVisibility}><span>{commentIcon}</span>
                 &nbsp;Hide Comments&nbsp;({numOfComments})
                 </div>
 
@@ -46,7 +50,7 @@ export const Comments = (props) => {
         return (
             <p className="showComments" 
                 onClick={changeVisibility}> 
-                <i class='far fa-comment'></i>&nbsp;Comments&nbsp;({numOfComments})
+                <span>{commentIcon}</span>&nbsp;Comments&nbsp;({numOfComments})
             </p>
            
         )

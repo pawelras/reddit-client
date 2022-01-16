@@ -12,7 +12,10 @@
 }
 .searchBar {
     background-color: #fff2e6;
-    
     min-width: 200px;
-    width: 50%;
+    width: 40%;
+}
+.searchIcon {
+    color: red;
+    margin-left: 20px;
 }
